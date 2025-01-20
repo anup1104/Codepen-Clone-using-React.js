@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body {
+    margin: 0;
+}
+
+.top-pane {
+    display: flex; /* Ensure horizontal alignment */
+    background-color: hsl(225, 6%, 25%);
+    gap: 1rem;
+}
+
+.pane {
+    height: 50vh;
+    display: flex;
+    position: relative; /* Add relative positioning */
+}
+
+.editor-container {
+    flex-grow: 1;
+    flex-basis: 0;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    background-color: hsl(225, 6%, 25%);
+    padding: 0.5rem;
+    border: 4px solid rgb(171, 162, 162);
+    border-radius: 0.5rem;
+    margin: 0.5rem;
+    /* transition: flex-basis 0.3s, width 0.3s; Smooth transition for collapsing */
+}
+
+.editor-container.collapsed {
+    flex-basis: 200px; /* Set a fixed width when collapsed */
+    flex-grow: 0; /* Prevent it from growing */
+}
+
+.editor-title {
+    display: flex;
+    justify-content: space-between;
+    background-color: hsl(225, 6%, 13%);
+    color: white;
+    font-size: large;
+    padding: 0.5rem 0.5rem 0.5rem 1rem;
+    border-top-right-radius: 0.5rem;
+    border-top-left-radius: 0.5rem;
+}
+
+.code-mirror-wrapper {
+    flex-grow: 1;
+    flex-basis: 0;
+    border-bottom-right-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+    overflow: hidden;
+    max-width: 100%;
+    min-width: 0;
+}
+
+.CodeMirror {
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Prevent horizontal scrolling */
+    word-wrap: break-word; /* Wrap long words */
+    white-space: pre-wrap; /* Preserve line breaks and wrap long lines */
+    overflow-wrap: break-word; /* Ensure long words break correctly */
+}
+
+.btn{
+    /* background-color: aqua; */
+    background: none;
+    color: white;
+}
+
